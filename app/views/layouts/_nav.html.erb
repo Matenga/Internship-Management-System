@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><%= image_tag("logo.png")%></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Home", root_path %></li>
+          <li><a href="#home">Noticeboard</a></li>
+          <li><%= link_to "Apply", new_intern_path %></li>
+          <li><%= link_to "Internees", interns_path %></li>
+          <li><a href="#tour">Training</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">  
+        <%  if user_signed_in? && current_user %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email.capitalize %>'s Profile <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><%= link_to "Edit your profile", edit_user_registration_path(current_user) %></li>
+            <!--<li><a href="#">Something else here</a></li>-->
+            <!--<li role="separator" class="divider"></li>-->
+            <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        <% else  %>
+          <li><%= link_to "Log in",  new_user_session_path %></li>
+          <li><%= link_to "Register", new_user_registration_path  %></li>
+          </li>
+        <%  end %>
+        </ul>
+      </div>
+    </div>
+</nav>

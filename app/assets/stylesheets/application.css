@@ -1,0 +1,131 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.main-panel > .content {
+    padding: 30px 15px;
+    min-height: calc(100% - 123px);
+}
+
+.resize{
+    height: 130px;
+}
+
+body{
+
+	background-color: #f0f0f0;
+}
+h2,h3{
+
+	color: RGBA(6, 6, 6, 0.47);
+}
+
+h4, .h4 {
+    font-size: 1.5em;
+    line-height: 1.2em;
+    color: RGBA(6, 6, 6, 0.47) ;
+
+}
+
+.card {
+    border-radius: 6px;
+    box-shadow: 0 3px 4px rgba(81, 80, 78, 0.62);;
+    background-color: #FFFFFF;
+    color: #252422;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+	width: 100%;
+}
+
+.card-user .image {
+    border-radius: 8px 8px 0 0;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+.card .image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.card-user .content {
+    min-height: 200px;
+}
+.card .content {
+    padding: 15px 15px 10px 15px;
+}
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+    margin-top: 10px;
+
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+     margin-top: 10px;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+     margin-top: 10px;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+     margin-top: 10px;
+ }
+
+.input-field{
+    position: center;
+}
+.heading{
+    margin-bottom: 20px;
+}
+.indigo{
+    margin-bottom: 20px;
+}
+#margin-down{
+    margin-bottom: 47px;
+}
+.rad-border{
+    border-radius: 6px;
+}
+
+.p_size{
+    max-width: 700px;
+.white{
+    color:#000;
+    background-color:#fff;
+}
+

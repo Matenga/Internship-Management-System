@@ -1,0 +1,100 @@
+
+   <!-- <div class="container-fluid">
+      <div class="panel panel-success" style="border:2px solid #d6e9c6; margin-top:20px;">
+        <div class="panel-heading">
+
+            <h1 style="text-align:center;">Interns at Joadah & iDealinks Ltd</h1><%= link_to 'New Intern', new_intern_path, class: "btn btn-primary" %>
+            <hr style="width:100%; color: #ddd; background-color: #ddd;">
+
+             
+              <p id="notice"><%= notice %></p>
+          </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+
+        <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+            <thead class="cf">
+              <tr>
+                <tr>
+                  <th>Fullname</th>
+                  <th>Othername</th>
+                  <th>Profilepic</th>
+                  <th>Institution</th>
+                  <th>Registrationnumber</th>
+                  <th>Program</th>
+                  <th>Year</th>
+                  <th>Gender</th>
+                  <th>Emailadress</th>
+                 
+                  <th colspan="3"> </th>
+                </tr>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @interns.each do |intern| %>
+                <tr>
+                  <td><%= intern.fullName %></td>
+                  <td><%= intern.otherName %></td>
+                  <td><%= intern.image %></td>
+                  <td><%= intern.institution %></td>
+                  <td><%= intern.registrationNumber %></td>
+                  <td><%= intern.program %></td>
+                  <td><%= intern.year %></td>
+                  <td><%= intern.gender %></td>
+                  <td><%= intern.emailAdress %></td>
+                  <%  if user_signed_in? && current_user.id == intern.user_id %>
+                  <td><%= link_to 'Show', intern %></td>
+                  <td><%= link_to 'Edit', edit_intern_path(intern) %></td>
+                  <td><%= link_to 'Destroy', intern, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+
+            
+          </table>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>-->
+   
+
+<div class="container-fluid" style="margin-top:10px;">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+          <span class="panel-header-color">
+            <h1 style="text-align:center;">Interns at Joadah Consults Ltd & iDeaLinks Africa Ltd</h1>
+          </span>
+      </div> 
+      <div class="panel-body">
+          <div class="container-fluid">
+            <div class="row">
+              <% @interns.each do |intern| %>
+              <ul class="thumbnails">
+                      <li class="col-md-3 col-xs-6">
+                        <div class="thumbnail">
+                          <div class="avatar border-white" style="height:120px;"><%= image_tag (intern.image_url.to_s), size: "50x160" %></div></br></br>
+                          <div class="caption">
+                            <h4><%= intern.fullName %></br><%= intern.otherName %></h4>
+                            <p>Institution: &nbsp;<%= intern.institution %> </br>Program: &nbsp;<%= intern.program %> </br>Gender: &nbsp;<%= intern.gender %></p>
+                            <%= link_to 'View', intern, class: "btn btn-success btn-block" %>
+
+                          </div>
+                        </div>
+                      </li>
+                       
+                  </ul>
+                  <% end %>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
